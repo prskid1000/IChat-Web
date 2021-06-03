@@ -205,7 +205,6 @@ class Index extends React.Component
   }
 
   Home(event) {
-    console.log("hii");
     this.props.history.push("/index");
   }
 
@@ -299,7 +298,7 @@ class Index extends React.Component
               <div className=" jumbotron col-sm-3 hide-on-small-only">
                 <div class="jumbotron">
                   <center><h2>Users</h2></center>
-                  <center className="pb-5 m-3">
+                  <center>
                     {this.state.members.map((user, index) => (
                       <div className="card col">
                         <div className="row mb-1">
