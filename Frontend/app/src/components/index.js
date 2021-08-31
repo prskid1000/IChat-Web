@@ -1,7 +1,6 @@
 /* eslint-disable */
 import React from "react";
 import { Button } from "react-bootstrap";
-import '../style/main.css';
 import axios from "axios";
 
 function remove(arr, value) {
@@ -210,115 +209,92 @@ class Index extends React.Component
 
     render() {
         return (
-          <div>
-            <nav className="grey darken-4 mb-3">
-              <div className="nav-wrapper m-5 ">
-                <a href="#" className="left brand-logo hide-on-small-only">IChat-Web</a>
-                <a href="#" className="left hide-on-med-and-up">IChat-Web</a>
-                <ul className="right">
-                  <li><a href="https://wellcart.netlify.app/"><i className="material-icons">store</i></a></li>
-                  <li><a href="#"><i className="material-icons" onClick={this.Home}>home</i></a></li>
-                  <li><a href="/"><i className="material-icons">logout</i></a></li>
+         <>
+            <nav className="navbar fixed-top navbar-expand-md bg">
+              <div className="title">IChat</div>
+              <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+                <i className="text-white fas fa-bars"></i>
+              </button>
+
+              <div className="collapse navbar-collapse subbg2" id="collapsibleNavbar">
+                <ul className="nav navbar-nav ml-auto navbar-right">
+                  <li className="nav-item pl-3">
+                    <a className="btn navbar-dark clickable f24 text-white" href="/index">Home</a>
+                  </li>
                 </ul>
               </div>
             </nav>
+            
+            <div className="mt-5 p-4 bg">
+              <ul className="nav nav-pills ml-3">
+                <li className="nav-item"><a className="nav-link active btn btn-dark bgt" data-toggle="pill" href="#message" role="tab">My Messages</a></li>
+                <li className="nav-item"><a className="nav-link btn btn-dark bgt" data-toggle="pill" href="#contact" role="tab">My Contact</a></li>
+              </ul>
 
-            <div className="alert white-text grey darken-1 alert-dismissible fade show" role="alert">
-              <strong>{this.state.alert}</strong>
-              <button type="button" className="close" data-dismiss="alert" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-              </button>
-            </div>
+              <div className="tab-content">
 
-            <div className="row">
-              
-              <div className="col-12 hide-on-med-and-up">
-                <div>
-                  <center><h2>Users</h2></center>
-                  <center className="pb-5">
-                    {this.state.members.map((user, index) => (
-                      <div className="card col">
-                        <div className="row m-1">
-                          <span class="col-8 h5 mt-2 mb-1 ml-1" id={index}>
-                            {user.userid}
-                          </span>
-                          <span class="col-3 new badge teal mt-2 mb-1 darken-4" data-badge-caption="" id={user.userid} onClick={this.newChat} >
-                            <a href="#" class="nostyle">
-                              New Chat
-                          </a>
-                          </span>
-                        </div>
-                      </div>
-                    ))}
-                  </center>
-                </div>
-              </div>
+                <div id="message" className="tab-pane active" role="tabpanel">
+                  <div className="mg">
+                    <div className="row bgt p-4">
+                      {this.state.chats.map((chat, index) => (
+                        <div className="card col-12 col-md-3 m-1">
 
-              <div className="col-12 col-md-9">
-                <div>
-                  <center><h2>My Chats</h2></center>
-                  <center>
-                    {this.state.chats.map((chat, index) => (
-                      <div className="row mt-2 pb-3" id={index}>
-                        <div className="card col-12">
-
-                          <span class="new badge teal darken-4 m-3" data-badge-caption="">
-                            {chat.boxid}
-                          </span>
+                          <span class="new badge mt-3">{chat.boxid}</span>
                           <div className="card-body">
-                            {chat.chat.reverse().slice(0,2).map((chat, index) => (
-                              <div className="row">
-                                {
-                                  chat.author != this.state.user &&
-                                  <span className="input-group-text text-success col-sm-2 m-1">{chat.author}</span>
-                                }
-                                {
-                                  chat.author == this.state.user &&
-                                  <span className="input-group-text red-text col-sm-2 m-1 hide-on-med-and-up">{chat.author}</span>
-                                }
-                                <textarea class="materialize-textarea col-sm-9 m-1" value={chat.message}  disabled ></textarea>
-                                {
-                                  chat.author == this.state.user &&
-                                  <span className="input-group-text red-text col-sm-2 m-1 hide-on-small-only">{chat.author}</span>
-                                }
+                            {chat.chat.reverse().slice(0, 2).map((chat, index) => (
+                              <div className="row pb-3">
+                                <span className="subbg bgt col-10 col-md-6 m-1"><b>{chat.author}</b></span>
+                                <textarea className="col-10 bgt text-white ml-4 m-1" value={chat.message} disabled ></textarea>
                               </div>
-                              
+
                             ))}
                             <div className="row">
-                              <Button className="btn teal darken-4 col-sm-4 m-1 mr-3" onClick={this.Delete} id={chat.boxid}>Delete Chat</Button>
-                              <Button className="btn teal darken-4 col-sm-4 m-1 mr-3" onClick={this.Continue} id={chat.boxid}>Continue Chat</Button>
+                              <button className="btn bgt btn-dark col-5 m-1 mr-3" onClick={this.Delete} id={chat.boxid}>Delete</button>
+                              <button className="btn bgt btn-dark col-5 m-1 mr-3" onClick={this.Continue} id={chat.boxid}>Continue</button>
                             </div>
                           </div>
                         </div>
-                      </div>
-                    ))}
-                </center>
+                      ))}
+                    </div>
+                  </div>
                 </div>
-              </div>
-              
-              <div className="col-3 hide-on-small-only">
-                <div>
-                  <center><h2>Users</h2></center>
-                  <center>
-                    {this.state.members.map((user, index) => (
-                      <div className="card col">
-                        <div className="row mb-1">
-                          <span class="col-9 h5 mt-2 mb-1" id={index}>
-                            {user.userid}
-                          </span>
-                          <span class="col-1 new badge teal mt-2 mb-1 darken-4" data-badge-caption="">
-                            <a href="#" class="nostyle" id={user.userid} onClick={this.newChat} >
-                              New
-                          </a>
-                          </span>
-                        </div>   
-                      </div>
-                    ))}
-                  </center>
+                <div id="contact" className="tab-pane fade" role="tabpanel">
+                  <div className="mg">
+                    <div className="row p-4">
+                      {this.state.members.map((user, index) => (
+                        <div className="card col-12 col-md-3 m-2">
+                          <div className="text-white h6 mt-2 mb-1" id={index}>
+                            <b>{user.userid}</b>
+                            <a className="float-right btn bgt btn-dark" id={user.userid} onClick={this.newChat}>Chat</a>
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
+
+            <div className="panel-group fixed-bottom bg row pl-md-5 p-3">
+              <div className="panel col-8">
+                <div className="panel-body">
+                  <div className="ftext">Contact Us</div>
+                  <div className="ftext">Email: prskid1000@gmail.com</div>
+                  <div className="ftext">Address: IIIT-R, Jharkhand, India</div>
+                </div>
+              </div>
+              <div className="panel col-4 p-3">
+                <div className="panel-body">
+                  <div className="ftext clickable"><a className="clickable text-white" href="https://wellcart.netlify.app/" >Donate Us</a></div>
+                </div>
+              </div>
+              <div className="panel col-12">
+                <div className="d-flex ftext justify-content-center panel-body">
+                  Copyright @ 2021, IChat
+                </div>
+              </div>
+            </div>
+         </>
         );
     }
 }

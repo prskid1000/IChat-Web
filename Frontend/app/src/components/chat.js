@@ -1,7 +1,6 @@
 /* eslint-disable */
 import React from "react";
 import { Button } from "react-bootstrap";
-import '../style/main.css';
 import axios from "axios";
 
 class postView extends React.Component
@@ -35,6 +34,7 @@ class postView extends React.Component
     })
       .then(res => {
         this.setState({'chats': res.data.data.chat});
+        this.setState({ 'mycomment': "" });
       });
 
   }
@@ -75,7 +75,6 @@ class postView extends React.Component
       });
 
     this.intervalID = setTimeout(this.getData.bind(this), 5000);
-    console.log("hi");
   }
 
   componentDidMount() {
@@ -88,62 +87,60 @@ class postView extends React.Component
 
     render() {
         return (
-          <div>
-            <nav className="grey darken-4 mb-3">
-              <div className="nav-wrapper m-5 ">
-                <a href="#" className="left brand-logo hide-on-small-only">IChat-Web</a>
-                <a href="#" className="left hide-on-med-and-up">IChat-Web</a>
-                <ul className="right">
-                  <li><a href="https://wellcart.netlify.app/"><i className="material-icons">store</i></a></li>
-                  <li><a href="#"><i className="material-icons" onClick={this.Home}>home</i></a></li>
-                  <li><a href="/"><i className="material-icons">logout</i></a></li>
+          <>
+            <nav className="navbar fixed-top navbar-expand-md bg">
+              <div className="title">IChat</div>
+              <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+                <i className="text-white fas fa-bars"></i>
+              </button>
+
+              <div className="collapse navbar-collapse subbg2" id="collapsibleNavbar">
+                <ul className="nav navbar-nav ml-auto navbar-right">
+                  <li className="nav-item pl-3">
+                    <a className="btn navbar-dark clickable f24 text-white" href="/index">Home</a>
+                  </li>
                 </ul>
               </div>
             </nav>
 
-            <div className="alert white-text grey darken-1 alert-dismissible fade show" role="alert">
-              <strong>{this.state.alert}</strong>
-              <button type="button" className="close" data-dismiss="alert" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-              </button>
-            </div>
- 
-            <div>
-              <center><h2>Chat</h2></center>
-              <div className="row mt-md-2 pb-3">
-                <div className="card col-sm-12">
-                  <span class="new badge teal darken-4 m-3" data-badge-caption="">
-                    {this.state.boxid}
-                  </span>
-                  <div className="card-body bgt">
-                    {this.state.chats.map((chat, index) => (
-                      <div className="row">
-                        {
-                          chat.author != this.state.user &&
-                          <span className="input-group-text text-success col-sm-2 m-1">{chat.author}</span>
-                        }
-                        {
-                          chat.author == this.state.user &&
-                          <span className="input-group-text red-text col-sm-2 m-1 hide-on-med-and-up">{chat.author}</span>
-                        }
-                        <textarea class="materialize-textarea col m-1" value={chat.message} disabled ></textarea>
-                        {
-                          chat.author == this.state.user &&
-                          <span className="input-group-text red-text col-sm-2 m-1 hide-on-small-only">{chat.author}</span>
-                        }
-                      </div>
-                    ))}
-                    <div className="row">
-                      <textarea class="materialize-textarea col-sm-8 m-1" value={this.state.mycomment} onChange={this.handleChange}></textarea>
-                      <Button className="btn teal darken-4 col-sm-2 m-1" onClick={this.addComment} id="Send Message">Send Message</Button>
-                    </div>
+            <div className="mg bg">
+              <div className="row bgt mr-5 mt-5 pl-5 pt-5 pb-3">
+                <h4>{this.state.boxid}</h4>
+              </div>
+              <div className="col">
+                {this.state.chats.map((chat, index) => (
+                  <div className="row pb-3">
+                        <span className="subbg bgt col-10 col-md-6 pl-md-3 m-1"><b>{chat.author}</b></span>
+                        <textarea className="col-10 bgt text-white ml-4 m-1" value={chat.message} disabled ></textarea>
                   </div>
+                ))}
+                <div className="row">
+                  <textarea class="col-10 col-md-8 bgt text-white ml-4 m-1" placeholder="Enter Message" value={this.state.mycomment} onChange={this.handleChange}></textarea>
+                  <button className="btn btn-dark col-6 col-md-2 ml-4 m-1" onClick={this.addComment} id="Send Message">Send Message</button>
                 </div>
               </div>
-
             </div>
 
-          </div>
+            <div className="panel-group fixed-bottom bg row pl-md-5 p-3">
+              <div className="panel col-8">
+                <div className="panel-body">
+                  <div className="ftext">Contact Us</div>
+                  <div className="ftext">Email: prskid1000@gmail.com</div>
+                  <div className="ftext">Address: IIIT-R, Jharkhand, India</div>
+                </div>
+              </div>
+              <div className="panel col-4 p-3">
+                <div className="panel-body">
+                  <div className="ftext clickable"><a className="clickable text-white" href="https://wellcart.netlify.app/" >Donate Us</a></div>
+                </div>
+              </div>
+              <div className="panel col-12">
+                <div className="d-flex ftext justify-content-center panel-body">
+                  Copyright @ 2021, IChat
+                </div>
+              </div>
+            </div>
+          </>
         );
     }
 }
