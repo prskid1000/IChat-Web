@@ -259,7 +259,6 @@ class Index extends React.Component
                   <center><h2>My Chats</h2></center>
                   <center>
                     {this.state.chats.map((chat, index) => (
-              
                       <div className="row mt-2 pb-3" id={index}>
                         <div className="card col-12">
 
@@ -283,6 +282,7 @@ class Index extends React.Component
                                   <span className="input-group-text red-text col-sm-2 m-1 hide-on-small-only">{chat.author}</span>
                                 }
                               </div>
+                              
                             ))}
                             <div className="row">
                               <Button className="btn teal darken-4 col-sm-4 m-1 mr-3" onClick={this.Delete} id={chat.boxid}>Delete Chat</Button>
@@ -303,7 +303,7 @@ class Index extends React.Component
                     {this.state.members.map((user, index) => (
                       <div className="card col">
                         <div className="row mb-1">
-                          <span class="col-10 h5 mt-2 mb-1" id={index}>
+                          <span class="col-9 h5 mt-2 mb-1" id={index}>
                             {user.userid}
                           </span>
                           <span class="col-1 new badge teal mt-2 mb-1 darken-4" data-badge-caption="">
