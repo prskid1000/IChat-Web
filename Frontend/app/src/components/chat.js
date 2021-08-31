@@ -97,7 +97,7 @@ class postView extends React.Component
               <div className="collapse navbar-collapse subbg2" id="collapsibleNavbar">
                 <ul className="nav navbar-nav ml-auto navbar-right">
                   <li className="nav-item pl-3">
-                    <a className="btn navbar-dark clickable f24 text-white" href="/index">Home</a>
+                    <button className="btn navbar-dark clickable f24 text-white" onClick={this.Home}>Home</button>
                   </li>
                 </ul>
               </div>
