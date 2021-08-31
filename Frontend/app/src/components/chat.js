@@ -107,46 +107,42 @@ class postView extends React.Component
                 <span aria-hidden="true">&times;</span>
               </button>
             </div>
-            <br></br>
-
-            <div className="row">
-              <div className="col-sm">
-                <div class="jumbotron">
-                  <center><h2>Chat</h2></center>
-                  <div className="row col-11 mt-2 pb-3">
-                    <div className="card col-sm-12">
-                      <span class="new badge teal darken-4 m-3" data-badge-caption="">
-                        {this.state.boxid}
-                      </span>
-                      <div className="card-body">
-                        {this.state.chats.map((chat, index) => (
-                          <div className="row">
-                            {
-                              chat.author != this.state.user &&
-                              <span className="input-group-text text-success col-sm-2 m-1">{chat.author}</span>
-                            }
-                            {
-                              chat.author == this.state.user &&
-                              <span className="input-group-text red-text col-sm-2 m-1 hide-on-med-and-up">{chat.author}</span>
-                            }
-                            <textarea class="materialize-textarea col-sm-9 m-1" value={chat.message} disabled ></textarea>
-                            {
-                              chat.author == this.state.user &&
-                              <span className="input-group-text red-text col-sm-2 m-1 hide-on-small-only">{chat.author}</span>
-                            }
-                          </div>
-                        ))}
-                        <div className="row">
-                          <textarea class="materialize-textarea col-sm-8 m-1" value={this.state.mycomment} onChange={this.handleChange}></textarea>
-                          <Button className="btn teal darken-4 col-sm-3 m-1" onClick={this.addComment} id="Send Message">Send Message</Button>
-                        </div>
+ 
+            <div>
+              <center><h2>Chat</h2></center>
+              <div className="row mt-md-2 pb-3">
+                <div className="card col-sm-12">
+                  <span class="new badge teal darken-4 m-3" data-badge-caption="">
+                    {this.state.boxid}
+                  </span>
+                  <div className="card-body bgt">
+                    {this.state.chats.map((chat, index) => (
+                      <div className="row">
+                        {
+                          chat.author != this.state.user &&
+                          <span className="input-group-text text-success col-sm-2 m-1">{chat.author}</span>
+                        }
+                        {
+                          chat.author == this.state.user &&
+                          <span className="input-group-text red-text col-sm-2 m-1 hide-on-med-and-up">{chat.author}</span>
+                        }
+                        <textarea class="materialize-textarea col m-1" value={chat.message} disabled ></textarea>
+                        {
+                          chat.author == this.state.user &&
+                          <span className="input-group-text red-text col-sm-2 m-1 hide-on-small-only">{chat.author}</span>
+                        }
                       </div>
+                    ))}
+                    <div className="row">
+                      <textarea class="materialize-textarea col-sm-8 m-1" value={this.state.mycomment} onChange={this.handleChange}></textarea>
+                      <Button className="btn teal darken-4 col-sm-2 m-1" onClick={this.addComment} id="Send Message">Send Message</Button>
                     </div>
                   </div>
-
                 </div>
               </div>
+
             </div>
+
           </div>
         );
     }

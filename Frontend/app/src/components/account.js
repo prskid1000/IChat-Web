@@ -118,69 +118,69 @@ class Accounts extends React.Component
             </div>
             <br></br>
 
-            <div className="row">
-              <div className="col-sm-6">
-                <div class="jumbotron">
-                  <div class="card">
-                    <div class="card-header">
-                      <h3>Sign In</h3>
-                    </div>
-                    <div class="card-body">
-                      <form>
-                        <div class="input-group form-group">
-                          <div class="input-group-prepend">
-                            <span class="input-group-text"><i class="fas fa-user"></i></span>
-                          </div>
-                          <input type="text" class="form-control" placeholder="userid" id="userid" name="userid" onChange={this.handleChange}></input>
+            <ul className="nav nav-pills col-12 col-md-6 bg-dark ml-md-5 mt-md-5">
+              <li className="nav-item"><a className="nav-link active btn  btn-dark bg-dark" data-toggle="pill" href="#login" role="tab">Login</a></li>
+              <li className="nav-item"><a className="nav-link btn btn-dark bg-dark" data-toggle="pill" href="#register" role="tab">Register</a></li>
+            </ul>
+            <div className="tab-content">
+              <div id="login" className="tab-pane active" role="tabpanel">
+                <div className="col-sm-6">
+                  <div class="jumbotron">
+                    <div class="card">
+                      <div class="card-body">
+                        <form>
+                          <div class="input-group form-group">
+                            <div class="input-group-prepend">
+                              <span class="input-group-text"><i class="fas fa-user"></i></span>
+                            </div>
+                            <input type="text" class="form-control" placeholder="userid" id="userid" name="userid" onChange={this.handleChange}></input>
                           </div>
                           <div class="input-group form-group">
                             <div class="input-group-prepend">
                               <span class="input-group-text"><i class="fas fa-key"></i></span>
                             </div>
-                          <input type="password" class="form-control" placeholder="password" id="password" name="password" onChange={this.handleChange}></input>
-                            </div>
-                            <div class="row">
-                          <input type="button" value="Sign In" class="col btn float-right login_btn grey darken-4 white-text" onClick={this.Login} id="Login"></input>
-                            </div>
-                      </form>
-                    </div>
-                 </div>
-                </div>
-              </div>
-
-              <div className="col-sm-6">
-                <div class="jumbotron">
-                  <div class="card">
-                    <div class="card-header">
-                      <h3>Sign Up</h3>
-                    </div>
-                    <div class="card-body">
-                      <form>
-                        <div class="input-group form-group">
-                          <div class="input-group-prepend">
-                            <span class="input-group-text"><i class="fas fa-user"></i></span>
+                            <input type="password" class="form-control" placeholder="password" id="password" name="password" onChange={this.handleChange}></input>
                           </div>
-                          <input type="text" class="form-control" placeholder="userid" id="userid" name="userid" onChange={this.handleChange}></input>
-                        </div>
-                        <div class="input-group form-group">
-                          <div class="input-group-prepend">
-                            <span class="input-group-text"><i class="fas fa-key"></i></span>
+                          <div class="row">
+                            <input type="button" value="Sign In" class="col btn float-right login_btn grey darken-4 white-text" onClick={this.Login} id="Login"></input>
                           </div>
-                          <input type="password" class="form-control" placeholder="password" id="password" name="password" onChange={this.handleChange}></input>
-                        </div>
-                        <div class="input-group form-group">
-                          <div class="input-group-prepend">
-                            <span class="input-group-text"><i class="fas fa-key"></i></span>
-                          </div>
-                          <input type="password" class="form-control" name="password" id="password" placeholder="Re-Enter Password" onChange={this.checkPassword}></input>
-                        </div>
-                        <div class="row">
-                          <input type="button" value="Sign Up" class="col btn float-right login_btn grey darken-4 white-text" onClick={this.Register} id="Register"></input>
-                        </div>
-                      </form>
+                        </form>
+                      </div>
                     </div>
                   </div>
-
+                </div>
+              </div>
+              <div id="register" className="tab-pane" role="tabpanel">
+                <div className="col-sm-6">
+                  <div class="jumbotron">
+                    <div class="card">
+                      <div class="card-body">
+                        <form>
+                          <div class="input-group form-group">
+                            <div class="input-group-prepend">
+                              <span class="input-group-text"><i class="fas fa-user"></i></span>
+                            </div>
+                            <input type="text" class="form-control" placeholder="userid" id="userid" name="userid" onChange={this.handleChange}></input>
+                          </div>
+                          <div class="input-group form-group">
+                            <div class="input-group-prepend">
+                              <span class="input-group-text"><i class="fas fa-key"></i></span>
+                            </div>
+                            <input type="password" class="form-control" placeholder="password" id="password" name="password" onChange={this.handleChange}></input>
+                          </div>
+                          <div class="input-group form-group">
+                            <div class="input-group-prepend">
+                              <span class="input-group-text"><i class="fas fa-key"></i></span>
+                            </div>
+                            <input type="password" class="form-control" name="password" id="password" placeholder="Re-Enter Password" onChange={this.checkPassword}></input>
+                          </div>
+                          <div class="row">
+                            <input type="button" value="Sign Up" class="col btn float-right login_btn grey darken-4 white-text" onClick={this.Register} id="Register"></input>
+                          </div>
+                        </form>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>

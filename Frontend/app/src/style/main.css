@@ -1,3 +1,16 @@
+
+html {
+    -ms-overflow-style: none; 
+    scrollbar-width: none; 
+    overflow-y: scroll; 
+    scrollbar-color: white;
+}
+
+html::-webkit-scrollbar {
+    display: none; 
+    scrollbar-color: white;
+}
+
 .big-icon {
     font-size: 32px;
 }
@@ -14,4 +27,28 @@ a.nostyle:link {
 a.nostyle:visited {
     text-decoration: inherit;
     color: inherit;
+}
+
+.jumbotron {
+    background: transparent;
+}
+
+.card {
+    background: transparent;
+}
+
+.bgt {
+    background: transparent;
+}
+
+@media only screen and (max-width: 768px) and (orientation: portrait) {
+  h2 {
+      font-size: 36px;
+  }
+}
+
+@media only screen and (max-width: 768px) and (orientation: landscape) {
+  h2 {
+      font-size: 36px;
+  }
 }
