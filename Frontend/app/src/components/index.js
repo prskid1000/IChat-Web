@@ -241,7 +241,7 @@ class Index extends React.Component
 
                           <span class="new badge mt-3">{chat.boxid}</span>
                           <div className="card-body">
-                            {chat.chat.reverse().slice(0, 2).map((chat, index) => (
+                            {chat.chat.reverse().slice(0, 1).map((chat, index) => (
                               <div className="row pb-3">
                                 <span className="subbg bgt col-10 col-md-6 m-1"><b>{chat.author}</b></span>
                                 <textarea className="col-10 bgt text-white ml-4 m-1" value={chat.message} disabled ></textarea>
