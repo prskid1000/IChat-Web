@@ -82,14 +82,23 @@ html::-webkit-scrollbar {
     font-size: 30px;
 }
 
+.textrain {
+    color: #D53567 ;
+}
+
 textarea {
     -ms-overflow-style: none; 
     scrollbar-width: none; 
     overflow-y: scroll; 
     scrollbar-color: white;
-    font-weight: bold;
     outline: none;
     resize: none;
+}
+
+.textb {
+    color: black;
+    font-size: 28px;
+    font-weight: bolder;
 }
 
 textarea::placeholder {
@@ -147,6 +156,13 @@ textarea::-webkit-scrollbar {
  h5 {
     font-size: 18px;
  }
+
+ .textb {
+    color: black;
+    font-size: 24px;
+    font-weight: bolder;
+
+}
 
   .subbg2 {
   background: rgba(255,255,255,0.4);

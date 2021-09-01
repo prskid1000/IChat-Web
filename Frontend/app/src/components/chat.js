@@ -107,19 +107,19 @@ class postView extends React.Component
             </nav>
 
             <div className="mg bg">
-              <div className="row bgt mr-5 mt-5 pl-5 pt-5 pb-3">
-                <h4>{this.state.boxid}</h4>
+              <div className="row bgt ml-3 mt-5 mb-4 pt-5">
+                <div className="textb">{this.state.boxid}</div>
               </div>
               <div className="col">
                 {this.state.chats.map((chat, index) => (
                   <div className="row pb-3">
-                        {chat.author == this.state.user && <>
-                      <span className="bgt col-10 mt-1 mt-1 text-right"><b>{chat.author}</b></span>
-                      <textarea className="col-10 bgt text-white mr-4 m-1 text-right" value={chat.message} disabled ></textarea>
-                        </>}
                     {chat.author == this.state.user && <>
-                      <span className="bgt col-10  m-1"><b>{chat.author}</b></span>
-                      <textarea className="col-10 bgt text-white m-1" value={chat.message} disabled ></textarea>
+                      <span className="bgt mb-1 h5 col-10 text-white text-right"><b>{chat.author}</b></span>
+                      <textarea className="col-10 bgt text-white mr-5 text-right" value={chat.message} disabled ></textarea>
+                    </>}
+                    {chat.author != this.state.user && <>
+                      <span className="bgt mb-1 h5 col-10 text-white"><b>{chat.author}</b></span>
+                      <textarea className="col-10 bgt text-white" value={chat.message} disabled ></textarea>
                     </>}
                   </div>
                 ))}
