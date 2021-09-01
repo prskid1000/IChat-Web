@@ -110,13 +110,19 @@ class postView extends React.Component
               <div className="col">
                 {this.state.chats.map((chat, index) => (
                   <div className="row pb-3">
-                        <span className="subbg bgt col-10 col-md-6 pl-md-3 m-1"><b>{chat.author}</b></span>
-                        <textarea className="col-10 bgt text-white ml-4 m-1" value={chat.message} disabled ></textarea>
+                        {chat.author == this.state.user && <>
+                      <span className="bgt col-10 mt-1 mt-1 text-right"><b>{chat.author}</b></span>
+                      <textarea className="col-10 bgt text-white mr-4 m-1 text-right" value={chat.message} disabled ></textarea>
+                        </>}
+                    {chat.author == this.state.user && <>
+                      <span className="bgt col-10  m-1"><b>{chat.author}</b></span>
+                      <textarea className="col-10 bgt text-white m-1" value={chat.message} disabled ></textarea>
+                    </>}
                   </div>
                 ))}
                 <div className="row">
-                  <textarea class="col-10 col-md-8 bgt text-white ml-4 m-1" placeholder="Enter Message" value={this.state.mycomment} onChange={this.handleChange}></textarea>
-                  <button className="btn btn-dark col-6 col-md-2 ml-4 m-1" onClick={this.addComment} id="Send Message">Send Message</button>
+                  <textarea class="col-12 col-md-6 border border-white bgt text-white ml-4 m-1" placeholder="Enter Message" value={this.state.mycomment} onChange={this.handleChange}></textarea>
+                  <button className="btn btn-dark col-12 col-md-1 ml-4 m-1" onClick={this.addComment} id="Send Message">Send Message</button>
                 </div>
               </div>
             </div>

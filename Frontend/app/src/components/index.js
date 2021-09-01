@@ -239,18 +239,18 @@ class Index extends React.Component
                       {this.state.chats.map((chat, index) => (
                         <div className="card col-12 col-md-3 m-1">
 
-                          <span class="new badge mt-3">{chat.boxid}</span>
+                          <span className="h5 bgt mt-3">{chat.boxid}</span>
                           <div className="card-body">
                             {chat.chat.reverse().slice(0, 1).map((chat, index) => (
                               <div className="row pb-3">
-                                <span className="subbg bgt col-10 col-md-6 m-1"><b>{chat.author}</b></span>
+                                <span className="text-white bgt col-10 col-md-6 m-1"><b>{chat.author}</b></span>
                                 <textarea className="col-10 bgt text-white ml-4 m-1" value={chat.message} disabled ></textarea>
                               </div>
 
                             ))}
                             <div className="row">
-                              <button className="btn bgt btn-dark col-5 m-1 mr-3" onClick={this.Delete} id={chat.boxid}>Delete</button>
-                              <button className="btn bgt btn-dark col-5 m-1 mr-3" onClick={this.Continue} id={chat.boxid}>Continue</button>
+                              <button className="btn btn-dark bgt col-5 m-1 mr-3" onClick={this.Delete} id={chat.boxid}>Delete</button>
+                              <button className="btn btn-dark bgt col-5 m-1 mr-3" onClick={this.Continue} id={chat.boxid}>Continue</button>
                             </div>
                           </div>
                         </div>
@@ -263,9 +263,11 @@ class Index extends React.Component
                     <div className="row p-4">
                       {this.state.members.map((user, index) => (
                         <div className="card col-12 col-md-3 m-2">
-                          <div className="text-white h6 mt-2 mb-1" id={index}>
+                          <div className="text-white h6 mt-2 mb-2" id={index}>
                             <b>{user.userid}</b>
-                            <a className="float-right btn bgt btn-dark" id={user.userid} onClick={this.newChat}>Chat</a>
+                            <span>
+                              <a className="float-right btn btn-dark bgt" id={user.userid} onClick={this.newChat}>Chat</a>
+                            </span>
                           </div>
                         </div>
                       ))}

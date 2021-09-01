@@ -29,12 +29,13 @@ html::-webkit-scrollbar {
  }
 
  .btn-dark {
-  background: rgba(255,255,255,0.4);
+  background: rgba(255,255,255,0.4);;
   backdrop-filter: blur(5px);
   -webkit-backdrop-filter: blur(5px);
   color: white;
   border: none;
 }
+
 
 .form-control {
   background: rgba(255,255,255,0.2);
@@ -61,6 +62,7 @@ html::-webkit-scrollbar {
 
 .bgt {
     background: transparent;
+    border: #D53567;
 }
 
 .fc {
@@ -89,6 +91,10 @@ textarea {
     border-width: 1px;
     outline: none;
     resize: none;
+}
+
+textarea::placeholder {
+    color: white;
 }
 
 textarea::-webkit-scrollbar {
