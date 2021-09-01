@@ -87,14 +87,14 @@ textarea {
     scrollbar-width: none; 
     overflow-y: scroll; 
     scrollbar-color: white;
-    border: solid;
-    border-width: 1px;
+    font-weight: bold;
     outline: none;
     resize: none;
 }
 
 textarea::placeholder {
     color: white;
+    font-weight: bold;
 }
 
 textarea::-webkit-scrollbar {

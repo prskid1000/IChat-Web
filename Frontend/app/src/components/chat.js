@@ -121,7 +121,7 @@ class postView extends React.Component
                   </div>
                 ))}
                 <div className="row">
-                  <textarea class="col-10 col-md-6 border border-white bgt text-white ml-4 m-1" placeholder="Enter Message" value={this.state.mycomment} onChange={this.handleChange}></textarea>
+                  <textarea class="col-10 text-right col-md-8 bgt text-white ml-4 m-1" placeholder="Type Message Here" value={this.state.mycomment} onChange={this.handleChange}></textarea>
                   <button className="btn btn-dark col-10 col-md-1 ml-4 m-1" onClick={this.addComment} id="Send Message">Send Message</button>
                 </div>
               </div>

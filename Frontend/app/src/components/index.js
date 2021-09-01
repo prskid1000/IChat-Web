@@ -243,7 +243,7 @@ class Index extends React.Component
                           <div className="card-body">
                             {chat.chat.reverse().slice(0, 1).map((chat, index) => (
                               <div className="row pb-3">
-                                <span className="text-white bgt col-10 col-md-6 m-1"><b>{chat.author}</b></span>
+                                <span className="text-white bgt h5 col-10 col-md-6 m-1"><b>{chat.author}</b></span>
                                 <textarea className="col-10 bgt text-white ml-4 m-1" value={chat.message} disabled ></textarea>
                               </div>
 
@@ -263,7 +263,7 @@ class Index extends React.Component
                     <div className="row p-4">
                       {this.state.members.map((user, index) => (
                         <div className="card col-12 col-md-3 m-2">
-                          <div className="text-white h6 mt-2 mb-2" id={index}>
+                          <div className="text-white h5 mt-2 mb-2" id={index}>
                             <b>{user.userid}</b>
                             <span>
                               <a className="float-right btn btn-dark bgt" id={user.userid} onClick={this.newChat}>Chat</a>
