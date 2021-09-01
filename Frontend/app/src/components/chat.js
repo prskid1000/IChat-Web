@@ -99,6 +99,9 @@ class postView extends React.Component
                   <li className="nav-item pl-3">
                     <button className="btn navbar-dark clickable f24 text-white" onClick={this.Home}>Home</button>
                   </li>
+                  <li className="nav-item pl-3">
+                    <a className="btn navbar-dark text-white clickable" href="/"><i className="fas fa-sign-out-alt f24"></i><br></br>Logout</a>
+                  </li>
                 </ul>
               </div>
             </nav>
