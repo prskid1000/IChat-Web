@@ -1,0 +1,180 @@
+html {
+    -ms-overflow-style: none; 
+    scrollbar-width: none; 
+    overflow-y: scroll; 
+    background: linear-gradient(90deg,#9A109A 6%,#D53567 30%,#F14444 55%,#D53567 60%,#9A109A 90%);
+    color: white;
+    scrollbar-color: white;
+}
+
+html::-webkit-scrollbar {
+    display: none; 
+    scrollbar-color: white;
+}
+
+.big-icon {
+    font-size: 20vw;
+}
+
+.bg {
+  background: linear-gradient(90deg,#9A109A 6%,#D53567 30%,#F14444 55%,#D53567 60%,#9A109A 90%);
+  color: white;
+ }
+
+.subbg {
+  background: rgba(255,255,255,0.4);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  color: white;
+ }
+
+ .btn-dark {
+  background: rgba(255,255,255,0.4);;
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  color: white;
+  border: none;
+}
+
+
+.form-control {
+  background: rgba(255,255,255,0.2);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border: none;
+}
+
+.form-control:disabled {
+  background: rgba(255,255,255,0.2);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border: none;
+  color: white;
+}
+
+.form-control::placeholder {
+  color: white;
+}
+
+.form-control:not(:focus) {
+   color: white
+}
+
+.bgt {
+    background: transparent;
+    border: #D53567;
+}
+
+.fc {
+    color:rgba(153, 0, 51, 0.8);
+}
+
+.card {
+  background: rgba(255,255,255,0.4);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  color: black;
+  border: none;
+}
+
+.title {
+    color: white;
+    font-size: 30px;
+}
+
+.textrain {
+    color: #D53567 ;
+}
+
+textarea {
+    -ms-overflow-style: none; 
+    scrollbar-width: none; 
+    overflow-y: scroll; 
+    scrollbar-color: white;
+    outline: none;
+    resize: none;
+}
+
+.textb {
+    color: black;
+    font-size: 28px;
+    font-weight: bolder;
+}
+
+textarea::placeholder {
+    color: white;
+    font-weight: bold;
+}
+
+textarea::-webkit-scrollbar {
+    display: none; 
+    scrollbar-color: white;
+}
+
+.dropdown-toggle::after {
+    content: none;
+ }
+
+ .f24 {
+    font-size: 22px;
+ }
+
+ .clickable {
+     cursor: pointer;
+ }
+
+ .mg {
+     padding-bottom: 30vh;
+ }
+
+ .hoverable:hover {
+     background-color: gray;
+     color: white
+ }
+
+.ftext {
+     font-size: 16px;
+ }
+
+ .subbg2 {
+  background: transparent;
+  color: white;
+ }
+ 
+ .th {
+     color: white;
+ }
+
+ @media only screen and (max-width: 768px) {
+  .ftext {
+    font-size: 12px;
+ }
+  .f24 {
+    font-size: 18px;
+ }
+
+ h5 {
+    font-size: 18px;
+ }
+
+ .textb {
+    color: black;
+    font-size: 24px;
+    font-weight: bolder;
+
+}
+
+  .subbg2 {
+  background: rgba(255,255,255,0.4);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+ }
+
+  .th {
+     color: black;
+ }
+
+}
+
+
+ 
